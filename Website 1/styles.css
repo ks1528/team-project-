@@ -15,10 +15,11 @@ header {
     display: flex; /* Uses flexbox for layout */
     align-items: center; /* Vertically centers items */
     justify-content: space-between; /* Spaces out the items in the header */
+    font-size: larger;
 }
 
 header img {
-    height: 50px; /* Sets the logo image height */
+    height: 100px; /* Sets the logo image height */
 }
 
 /* Navigation Menu */
@@ -188,5 +189,6 @@ input[type="text"], input[type="email"], input[type="message"] {
 }
 
 input[id="message"]{
-    font-size: 16px;
+    font-size: larger;
+
 }
