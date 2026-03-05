@@ -1,46 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Events - Teach Computing</title>
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Year 7–8 Maths Hub</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <a href="index.html">
-        <img src="CYELogo.png" alt="Logo">
-        </a>
-        
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="page2.html">josh</a></li>
-                <li><a href="page3.html">kieran</a></li>
-                <li><a href="page4.html">udit</a></li>
-                <li><a href="page5.html">muhammad</a></li>
-                <li><a href="page6.html">oliver</a></li>
-                <li><a href="page1.html">developers</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <div class="content">
-        <h1>Josh's Page</h1>
-        <p>This is the page for Josh.</p>
+<header>
+    <a href="index.html"><img src="CYELogo.png" alt="Logo"></a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="page2.html">Josh</a></li>
+            <li><a href="page3.html">Kieran</a></li>
+            <li><a href="page4.html">Udit</a></li>
+            <li><a href="page5.html">Muhammad</a></li>
+            <li><a href="page6.html">Oliver</a></li>
+            <li><a href="page1.html">Developers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="content">
+
+<!-- Top Banner + Explanation -->
+<div style="display:flex; align-items:flex-start; gap:20px; margin-bottom:40px; flex-wrap:wrap;">
+    <img src="pexels-max-fischer-5212703.jpg" alt="Maths Banner" 
+         style="width:40%; max-width:300px; height:auto; display:block;">
+    <div style="flex:1; min-width:250px;">
+        <h1>Welcome to the Year 7–8 Maths Hub!</h1>
+        <p style="font-size:1.2rem; line-height:1.6;">
+            This hub is designed for students in Year 7–8. You can explore lessons, try quizzes, and practice problem-solving skills.  
+            <strong>What you’ll learn:</strong>
+            <ul>
+                <li>Simplifying and using <strong>ratios</strong></li>
+                <li>Adding, subtracting, and simplifying <strong>fractions</strong></li>
+                <li>Working with <strong>decimals</strong></li>
+                <li>Applying <strong>BIDMAS</strong> in equations</li>
+            </ul>
+            Use the buttons below to start an interactive quiz. One question at a time will appear, and you can quit anytime with the ❌ button.
+        </p>
+    </div>
+</div>
+
+<!-- Quiz Buttons -->
+<div style="text-align:center; margin-bottom:30px;">
+    <button onclick="startQuiz('easy')">Start Easy / Mixed Quiz</button>
+    <button onclick="startQuiz('medium')">Start Medium / Mixed Quiz</button>
+</div>
+
+<!-- Lessons Section -->
+<section style="margin-bottom:40px;">
+    <h2>Math Lessons</h2>
+
+    <div style="border:1px solid #ccc; padding:20px; margin-bottom:20px;">
+        <h3>Ratios</h3>
+        <p>Ratios compare quantities. For example, 2:4 means for every 2 of one thing there are 4 of another. Simplifying ratios makes them easier to understand.</p>
+        <p>Try this: If a recipe uses 2 cups of flour and 4 cups of sugar, the ratio is <strong>2:4</strong> or simplified <strong>1:2</strong>.</p>
     </div>
 
-    <footer>
-        <p>Team name | Contact: iEmail address | Phone: +44 123 456 7890</p>
-        <p>Follow us on <a href="#" style="color: white;">Social Media</a> | Team name</p>
-        <a href=""> Instagram |</a>
-        <a href=""> Facebook |</a>
-        <a href=""> X |</a>
-        <a href=""> Terms and Conditions</a>
+    <div style="border:1px solid #ccc; padding:20px; margin-bottom:20px;">
+        <h3>Fractions</h3>
+        <p>Fractions represent parts of a whole. Learn to add, subtract, multiply, and divide fractions carefully.</p>
+        <p>Example: 1/2 + 1/2 = 1, 3/4 + 1/2 = 5/4</p>
+    </div>
+
+    <div style="border:1px solid #ccc; padding:20px; margin-bottom:20px;">
+        <h3>Decimals</h3>
+        <p>Decimals are another way of representing parts of a whole. For instance, 0.5 = 1/2. Practice converting fractions to decimals and vice versa.</p>
+    </div>
+
+    <div style="border:1px solid #ccc; padding:20px; margin-bottom:20px;">
+        <h3>BIDMAS</h3>
+        <p>BIDMAS stands for Brackets, Indices, Division/Multiplication, Addition, Subtraction. Follow this order to solve complex equations correctly.</p>
+        <p>Example: 2 + 3 × 4 = 14 (do multiplication first).</p>
+    </div>
+</section>
+
+<!-- Tips & Tricks -->
+<section style="margin-bottom:40px;">
+    <h2>Tips & Tricks</h2>
+    <ul>
+        <li>Always simplify ratios and fractions before using them.</li>
+        <li>Check your decimal calculations with fractions for accuracy.</li>
+        <li>Remember BIDMAS order – brackets first, then indices, etc.</li>
+        <li>Practice makes perfect – try a small quiz after each lesson!</li>
+    </ul>
+</section>
+
+<!-- Math Fun Facts -->
+<section style="margin-bottom:40px;">
+    <h2>Math Fun Facts</h2>
+    <ul>
+        <li>Did you know? Zero is the only number that cannot be represented in Roman numerals.</li>
+        <li>Fractions were used in Ancient Egypt over 4,000 years ago!</li>
+        <li>The symbol for division (÷) is called an obelus.</li>
+        <li>Pi (π) is a never-ending, never-repeating number.</li>
+    </ul>
+</section>
+
+<!-- Mini Challenges -->
+<section style="margin-bottom:40px;">
+    <h2>Mini Challenges</h2>
+    <p>Try these quick questions:</p>
+    <ul>
+        <li>Simplify 10:15</li>
+        <li>Calculate 1/3 + 2/3</li>
+        <li>Convert 0.25 to a fraction</li>
+        <li>Solve 5 + 2 × 3 using BIDMAS</li>
+    </ul>
+</section>
+
+<!-- Game Area -->
+<section style="margin-bottom:40px;">
+    <h2>Game Area</h2>
+    <p>Games area</p>
+</section>
+
+<!-- Quiz Overlay -->
+<div id="quiz-overlay" style="display:none; visibility:hidden; position:fixed; top:0; left:0; width:100%; height:100%; 
+     background-color: rgba(0,0,0,0.85); z-index:1000; display:flex; align-items:center; justify-content:center;">
+
+    <div style="position:relative; background:#003366; padding:50px; border-radius:10px; max-width:600px; width:90%; text-align:center; box-sizing:border-box;">
+        <button onclick="quitQuiz()" style="position:absolute; top:10px; right:10px; font-size:1.5rem; background:red; color:white; border:none; border-radius:50%; width:35px; height:35px; cursor:pointer;">X</button>
+
+        <h2 id="quiz-question" style="font-size:2rem; margin-bottom:20px;"></h2>
+        <input id="quiz-answer" type="text" style="font-size:1.8rem; padding:15px; width:80%; margin-bottom:20px; display:none;">
         <br>
-        <img src="file path" alt="">
-    </footer>
+        <button id="submit-btn" onclick="submitAnswer()" style="font-size:1.4rem; padding:10px 25px; display:none;">Submit</button>
+        <p id="quiz-feedback" style="font-size:1.4rem; margin-top:15px;"></p>
+    </div>
+</div>
+
+</div>
+
+<footer>
+    <p>Team name | Contact: Email address | Phone: +44 123 456 7890</p>
+    <p>
+        <a href="#">Instagram</a> | 
+        <a href="#">Facebook</a> | 
+        <a href="#">X</a>
+    </p>
+</footer>
+
+<script>
+// Quiz data for Easy and Medium
+const quizzes = {
+    easy: [
+        { q:"Simplify 2:4", a:"1:2" },
+        { q:"1/2 + 1/2 = ?", a:"1" },
+        { q:"1 ÷ 2 = ?", a:"0.5" },
+        { q:"2 + 3 × 4 = ?", a:"14" }
+    ],
+    medium: [
+        { q:"Simplify 6:18", a:"1:3" },
+        { q:"3/4 + 1/2 = ?", a:"5/4" },
+        { q:"3 ÷ 4 = ?", a:"0.75" },
+        { q:"5 × (2 + 3) = ?", a:"25" }
+    ]
+};
+
+let currentQuiz = [];
+let currentIndex = 0;
+
+function startQuiz(level){
+    currentQuiz = quizzes[level];
+    currentIndex = 0;
+
+    const overlay = document.getElementById("quiz-overlay");
+    overlay.style.display = "flex";
+    overlay.style.visibility = "visible";
+
+    const input = document.getElementById("quiz-answer");
+    input.style.display = "inline-block";
+
+    const submitBtn = document.getElementById("submit-btn");
+    submitBtn.style.display = "inline-block";
+
+    showQuestion();
+}
+
+function showQuestion(){
+    if(currentIndex >= currentQuiz.length){
+        document.getElementById("quiz-question").innerText = "🎉 You completed the quiz!";
+        document.getElementById("quiz-answer").style.display = "none";
+        document.getElementById("submit-btn").style.display = "none";
+        document.getElementById("quiz-feedback").innerText = "";
+        return;
+    }
+    const q = currentQuiz[currentIndex];
+    document.getElementById("quiz-question").innerText = q.q;
+    const input = document.getElementById("quiz-answer");
+    input.value = "";
+    input.style.display = "inline-block";
+    input.focus();
+    document.getElementById("quiz-feedback").innerText = "";
+}
+
+function submitAnswer(){
+    const input = document.getElementById("quiz-answer");
+    const feedback = document.getElementById("quiz-feedback");
+    const correct = currentQuiz[currentIndex].a;
+
+    if(input.value.trim() === correct){
+        feedback.innerText = "✅ Correct!";
+        feedback.style.color = "lightgreen";
+        currentIndex++;
+        setTimeout(showQuestion, 700);
+    } else {
+        feedback.innerText = "❌ Try again!";
+        feedback.style.color = "red";
+    }
+}
+
+function quitQuiz(){
+    const overlay = document.getElementById("quiz-overlay");
+    overlay.style.display = "none";
+    overlay.style.visibility = "hidden";
+
+    const input = document.getElementById("quiz-answer");
+    input.style.display = "none";
+
+    const submitBtn = document.getElementById("submit-btn");
+    submitBtn.style.display = "none";
+}
+</script>
+
 </body>
 </html>
