@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head><title>Geometry</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">Subjects ▼</button>
+        <div class="dropdown-content">
+            <a href="algebra.html">Algebra</a>
+            <a href="arithmetic.html">Arithmatic</a>
+            <a href="geometry.html">Geometry</a>
+            <a href="trigonometry.html">Trigonometry</a>
+        </div>
+    </div>
+
+    <a href="leaderboard.html">Leaderboard</a>
+</nav>
+
+
+
+
+<div class="container"><div class="card">
+<h2>Geometry Lesson</h2>
+<div class="lesson-box"><p>
+    <img src="geo.png" alt="Geometry location" width="450">
+</p></div>
+<button onclick="location.href='geoworkings.html'">Wokred Solutions</button>
+
+<p id="question"></p>
+<input id="answer"><button onclick="submitAnswer()">Submit</button>
+</div></div>
+<script>
+function runQuiz(questions){
+let q=0; let score=0;
+const qEl=document.getElementById("question");
+const aEl=document.getElementById("answer");
+function show(){ qEl.innerText=questions[q].question; }
+window.submitAnswer=function(){
+if(aEl.value.trim()==questions[q].answer) score++;
+aEl.value="";
+q++;
+if(q<questions.length) show(); else finish();
+}
+function finish(){
+let board=JSON.parse(localStorage.getItem("leaderboard"))||[];
+board.push({name:localStorage.getItem("currentUser"),score:score});
+board.sort((a,b)=>b.score-a.score);
+localStorage.setItem("leaderboard",JSON.stringify(board));
+window.location.href="leaderboard.html";
+}
+show();
+}
+runQuiz([
+{question:"Triangle angles total?",answer:"180"},
+{question:"Square sides?",answer:"4"},
+{question:"Right angle degrees?",answer:"90"},
+{question:"Rectangle area = ? x width",answer:"length"},
+{question:"Circle full rotation?",answer:"360"}
+]);
+</script>
+<footer><p>Math Learning Platform © 2026</p><p>Learn • Practice • Improve</p></footer>
+</body>
+</html>

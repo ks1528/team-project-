@@ -1,0 +1,26 @@
+<html>
+<head><title>Leaderboard</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<nav>
+<a href="index.html">Home</a>
+<a href="leaderboard.html">Leaderboard</a>
+<a href="test.html">Ages 17-18</a>
+</nav>
+
+<div class="container"><div class="card">
+<h2>Leaderboard</h2>
+<div id="board"></div>
+</div></div>
+<script>
+let leaderboard=JSON.parse(localStorage.getItem("leaderboard"))||[];
+let div=document.getElementById("board");
+leaderboard.forEach((entry,i)=>{
+let d=document.createElement("div");
+d.className="leaderboard-item";
+d.innerHTML=`<span>${i+1}. ${entry.name}</span><span>${entry.score}</span>`;
+div.appendChild(d);
+});
+</script>
+<footer><p>Math Learning Platform © 2026</p><p>Learn • Practice • Improve</p></footer>
+</body>
+</html>

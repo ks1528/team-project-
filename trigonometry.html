@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head><title>Trigonometry</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">Subjects ▼</button>
+        <div class="dropdown-content">
+            <a href="algebra.html">Algebra</a>
+            <a href="arithmetic.html">Arithmatic</a>
+            <a href="geometry.html">Geometry</a>
+            <a href="trigonometry.html">Trigonometry</a>
+        </div>
+    </div>
+
+    <a href="leaderboard.html">Leaderboard</a>
+</nav>
+
+
+<div class="container"><div class="card">
+<h2>Trigonometry Lesson</h2>
+
+
+<div class="lesson-box"><p>📘Definition<br>
+<br>
+Trigonometry studies the relationships between
+the angles and sides of triangles, primarily right-angled triangles.
+<br>
+</p></div>
+
+
+<div class="lesson-box"><p>📘Basic Trigonometry Ratios<br>
+<br>
+For a right-angled triangle with angleθ:<br>
+- Sinθ = opposite/hypotenuse<br>
+- Cosθ = adjacent/hypotenuse<br>
+- Tanθ = opposite/adjacent<br>
+<br>
+</p></div>
+
+<div class="lesson-box"><p>📘Reciprocal Ratios<br>
+<br>
+For a right-angled triangle with angleθ:<br>
+- Cosecθ = 1/sinθ<br>
+- Secantθ = 1/cosθ<br>
+- Cotangent = 1/tanθ<br>
+<br>
+</p></div>
+
+<div class="lesson-box"><p>📘Reciprocal Ratios<br>
+<br>
+For a right-angled triangle with angleθ:<br>
+- Cosecθ = 1/sinθ<br>
+- Secantθ = 1/cosθ<br>
+- Cotangent = 1/tanθ<br>
+<br>
+</p></div>
+
+<p id="question"></p>
+<input id="answer"><button onclick="submitAnswer()">Submit</button>
+</div></div>
+<script>
+function runQuiz(questions){
+let q=0; let score=0;
+const qEl=document.getElementById("question");
+const aEl=document.getElementById("answer");
+function show(){ qEl.innerText=questions[q].question; }
+window.submitAnswer=function(){
+if(aEl.value.trim()==questions[q].answer) score++;
+aEl.value="";
+q++;
+if(q<questions.length) show(); else finish();
+}
+function finish(){
+let board=JSON.parse(localStorage.getItem("leaderboard"))||[];
+board.push({name:localStorage.getItem("currentUser"),score:score});
+board.sort((a,b)=>b.score-a.score);
+localStorage.setItem("leaderboard",JSON.stringify(board));
+window.location.href="leaderboard.html";
+}
+show();
+}
+runQuiz([
+{question:"sin = opposite / ?",answer:"hypotenuse"},
+{question:"cos = adjacent / ?",answer:"hypotenuse"},
+{question:"tan = opposite / ?",answer:"adjacent"},
+{question:"Right triangle degrees total?",answer:"180"},
+{question:"90 degree angle called?",answer:"right"}
+]);
+</script>
+<footer><p>Math Learning Platform © 2026</p><p>Learn • Practice • Improve</p></footer>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<html>
+<head><title>Algebra</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">Subjects ▼</button>
+        <div class="dropdown-content">
+            <a href="algebra.html">Algebra</a>
+            <a href="arithmetic.html">Arithmatic</a>
+            <a href="geometry.html">Geometry</a>
+            <a href="trigonometry.html">Trigonometry</a>
+        </div>
+    </div>
+
+    <a href="leaderboard.html">Leaderboard</a>
+</nav>
+
+
+<div class="container"><div class="card">
+<h2>Algebra Lesson</h2>
+
+
+<div class="lesson-box"><p>📘 Algebra Review: Solving Equations and Functions<br></p></div>
+
+<div class="lesson-box"><p>📘 Functions<br>
+<br>
+
+- A function shows a relationship between an input and an output.<br>
+
+- It works like a rule or machine.<br>
+
+- You substitute a number into the rule to find the output.<br>
+
+- Functions are often written using function notation.<br>
+
+- Always substitute carefully and simplify fully.<br>
+
+</p></div>
+
+<div class="lesson-box"><p>📘 Solving Linear Equations<br>
+<br>
+
+- A linear equation contains a variable raised to the power of 1.<br>
+
+- The goal is to find the value of the unknown variable.<br>
+
+- Move numbers to isolate the variable.<br>
+
+- Whatever you do to one side, you must do to the other.<br>
+
+- Always simplify your final answer.<br>
+<br>
+
+</p></div>
+
+<div class="lesson-box"><p>📘 Expanding and Factorising<br>
+<br>
+
+- Expanding means multiplying a bracket out.<br>
+
+- Each term inside the bracket must be multiplied.<br>
+
+- Factorising is the reverse of expanding.<br>
+
+- Look for a highest common factor first.<br>
+
+- Check your factorised answer by expanding it again.<br>
+<br>
+</p></div>
+
+<div class="lesson-box"><p>📘 Quadratic Equations<br>
+<br>
+
+- A quadratic includes a variable squared.<br>
+
+- They can sometimes be solved by factorising.<br>
+
+- Look for two numbers that multiply to give one value and add to give another.<br>
+
+- If factorising does not work easily, another formula method can be used.<br>
+
+- Quadratic equations can have two solutions, one solution, or no real solutions.<br>
+<br>
+
+<br>
+</p></div>
+
+<p id="question"></p>
+<input id="answer"><button onclick="submitAnswer()">Submit</button>
+</div></div>
+<script>
+function runQuiz(questions){
+let q=0; let score=0;
+const qEl=document.getElementById("question");
+const aEl=document.getElementById("answer");
+function show(){ qEl.innerText=questions[q].question; }
+window.submitAnswer=function(){
+if(aEl.value.trim()==questions[q].answer) score++;
+aEl.value="";
+q++;
+if(q<questions.length) show(); else finish();
+}
+function finish(){
+let board=JSON.parse(localStorage.getItem("leaderboard"))||[];
+board.push({name:localStorage.getItem("currentUser"),score:score});
+board.sort((a,b)=>b.score-a.score);
+localStorage.setItem("leaderboard",JSON.stringify(board));
+window.location.href="leaderboard.html";
+}
+show();
+}
+runQuiz([
+{question:"5x-7=18, x=?",answer:"5"},
+{question:"3(2x-4)+5x",answer:"11x-12"},
+{question:"6x^2+9x",answer:"3x(2x+3)"},
+{question:"x^2-5x+6=0",answer:"X=2 X=3"},
+{question:"2x^2-7x+3=0",answer:"X=0.5, X=3"}
+]);
+</script>
+<footer><p>Math Learning Platform © 2026</p><p>Learn • Practice • Improve</p></footer>
+</body>
+</html>
+
+
+
+
+
+	​

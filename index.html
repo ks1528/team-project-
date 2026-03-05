@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Math Learning Platform</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<nav>
+<a href="index.html">Home</a>
+<a href="leaderboard.html">Leaderboard</a>
+<a href="test.html">Ages 17-18</a>
+</nav>
+
+
+<div class="container">
+<div class="card">
+<h1>Math Learning Platform</h1>
+<input id="username" placeholder="Enter username">
+<button onclick="login()">Login</button>
+</div>
+</div>
+
+
+<script>
+function login(){
+const username=document.getElementById("username").value;
+if(!username) return alert("Enter username");
+localStorage.setItem("currentUser",username);
+window.location.href="arithmetic.html";
+}
+</script>
+
+
+<footer>
+<p>Math Learning Platform © 2026</p>
+<p>Learn • Practice • Improve</p>
+</footer>
+
+
+</body>
+</html>
