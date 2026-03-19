@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Events - Teach Computing</title>
-    
+    <title>Contact Us - Team Name</title>
+    </style>
 </head>
 <body>
     <header>
@@ -29,7 +29,7 @@
     </header>
 
     <div class="content">
-                <h1>Contact Us</h1>
+        <h1>Contact Us</h1>
 
         <div class="contact-details">
             <p><strong>Email:</strong> email</p>
@@ -53,8 +53,6 @@
 
             <button type="submit">Submit</button>
         </form>
-    </div>
-        
     </div>
 
     <footer>
