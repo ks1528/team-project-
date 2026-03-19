@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><title>Geometry</title><link rel="stylesheet" href="styles.css"></head>
+<head><title>Geometry</title><link rel="stylesheet" href="stylesOL.css"></head>
 <body>
 
 <!-- ===== NAVIGATION ===== -->
@@ -27,8 +27,18 @@
 <h2>Geometry Lesson</h2>
 <div class="lesson-box"><p>
     <img src="geo.png" alt="Geometry location" width="450">
-</p></div>
-<button onclick="location.href='geoworkings.html'">Wokred Solutions</button>
+</p>
+</div>
+
+<div class="lesson-box">
+    <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        title="Arithmetic Lesson Video"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
 
 <p id="question"></p>
 <input id="answer"><button onclick="submitAnswer()">Submit</button>
@@ -55,11 +65,11 @@ window.location.href="leaderboard.html";
 show();
 }
 runQuiz([
-{question:"Triangle angles total?",answer:"180"},
-{question:"Square sides?",answer:"4"},
-{question:"Right angle degrees?",answer:"90"},
-{question:"Rectangle area = ? x width",answer:"length"},
-{question:"Circle full rotation?",answer:"360"}
+{question:"A Cicrle has a radius of 10cm, Find the length of the Arc subtended by a cental angle of 60 degrees.",answer:"10.47"},
+{question:"In triangle ABC, AB=7, AC=9 <A=60 Degrees, Find the Length of BC.",answer:"8.19"},
+{question:"Two sides of a triangle are 8cm and 11cm and the inlcuded angle is 40 degress, Find the area of the triangle.",answer:"28.3"},
+{question:"A cone has a radius of 3cm and a height of 12cm, Find the volume.",answer:"113.1"},
+{question:"Point A(2,5) and B(8.13) are given. Find the midpoint of AB.",answer:"(5,9)"},
 ]);
 </script>
 <footer><p>Math Learning Platform © 2026</p><p>Learn • Practice • Improve</p></footer>
