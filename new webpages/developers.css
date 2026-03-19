@@ -1,0 +1,19 @@
+.cardcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-between;
+   
+   padding-top: 5rem;
+}
+main{
+    height: 50rem;
+}
+.card-title{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 2rem;
+}.card-body{
+  font-size: larger;
+}
