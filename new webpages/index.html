@@ -1,103 +1,265 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Teach Computing</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Year 7–8 Maths Hub</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
+nav ul { list-style:none; display:flex; gap:15px; margin:0; padding:0; }
+nav a { color:white; text-decoration:none; }
+.content { padding:20px; max-width:1000px; margin:auto; }
+
+/* Banner */
+.banner { display:flex; gap:20px; flex-wrap:wrap; align-items:flex-start; margin-bottom:40px; }
+.banner img { width:40%; max-width:300px; height:auto; display:block; border-radius:8px; }
+.banner-text { flex:1; min-width:250px; }
+.banner-text h1 { font-size:2rem; margin-bottom:10px; }
+.banner-text p { font-size:1.2rem; line-height:1.6; }
+
+/* Lessons */
+.lesson-card { display:flex; gap:25px; border:1px solid #ccc; padding:20px; margin-bottom:30px; align-items:flex-start; flex-wrap:wrap; background:#f8f8f8; border-radius:8px; min-height:260px; }
+.lesson-card img { width:220px; height:160px; object-fit:cover; border-radius:6px; }
+.lesson-card div { flex:1; min-width:250px; display:flex; flex-direction:column; justify-content:space-between; }
+.lesson-card button { padding:10px 20px; font-size:1rem; background:#003366; color:white; border:none; border-radius:6px; cursor:pointer; margin-top:10px; }
+.lesson-card button:hover { background:#0050a0; }
+
+/* Test Yourself */
+.test-yourself { text-align:center; padding:40px; background:#f0f0f0; border-radius:10px; margin-top:40px; }
+.lesson-button { padding:10px 20px; font-size:1rem; background:#003366; color:white; border:none; border-radius:6px; cursor:pointer; }
+.lesson-button:hover { background:#0050a0; }
+
+/* Sections */
+.section-title { margin-top:40px; margin-bottom:20px; }
+
+/* Overlays */
+#quiz-overlay, #lesson-overlay { display:none; visibility:hidden; position:fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center; }
+#quiz-box, #lesson-box { position:relative; background:#003366; padding:40px; border-radius:10px; max-width:600px; width:90%; text-align:center; box-sizing:border-box; color:white; }
+#quiz-box button#quit-btn, #lesson-box button#quit-btn { position:absolute; top:10px; right:10px; font-size:1.5rem; background:red; color:white; border:none; border-radius:50%; width:35px; height:35px; cursor:pointer; }
+#quiz-answer { font-size:1.6rem; padding:12px; width:80%; margin-bottom:20px; display:none; border-radius:6px; border:none; }
+#submit-btn, #start-quiz-btn { font-size:1.3rem; padding:10px 25px; display:none; background:#00aaff; color:white; border:none; border-radius:6px; cursor:pointer; }
+#quiz-feedback { font-size:1.4rem; margin-top:15px; }
+#quiz-progress, #quiz-score { margin-top:10px; }
+#lesson-content { font-size:1.2rem; margin-bottom:20px; text-align:left; }
+</style>
 </head>
 <body>
-    <header>
-        <a href="index.html">
-        <img src="CYE Logo.png" alt="Logo">
-        </a>
-        
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="page1.html">developers</a></li>
-                <li><a href="page2.html">josh</a></li>
-                <li><a href="page3.html">kieran</a></li>
-                <li><a href="page4.html">udit</a></li>
-                <li><a href="page5.html">muhammad</a></li>
-                <li><a href="page6.html">oliver</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <div class="content">
-        <h1>text</h1>
-        <p>text</p>
+<header>
+<img src="CYELogo.png" alt="Logo" href="index.html">
+<nav>
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="page2.html">Year 7-8 Maths</a></li>
+    <li><a href="page3.html">Year 9-10 Maths</a></li>
+    <li><a href="page6.html">Year 10-11 Maths</a></li>
+    <li><a href="page1.html">Developers</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+</ul>
+</nav>
+</header>
 
-        <p>text</p>
-            
-            <p>
-           text
-            </p>
-        
+<div class="content">
 
-            <p>
-            text
-            </p>>
+<!-- Banner -->
+<div class="banner">
+<img src="pexels-max-fischer-5212703.jpg" alt="Maths Banner">
+<div class="banner-text">
+<h1>Welcome to the Year 7–8 Maths Hub!</h1>
+<p>This hub is designed for students in Year 7–8. Explore lessons, then test your skills in quizzes.</p>
+<ul>
+<li>Simplifying and using <strong>ratios</strong></li>
+<li>Adding, subtracting, and simplifying <strong>fractions</strong></li>
+<li>Working with <strong>decimals</strong></li>
+<li>Applying <strong>BIDMAS</strong> in equations</li>
+</ul>
+</div>
+</div>
 
-        <!-- Image Carousel -->
-        <div class="carousel">
-            <div class="carousel-images">
-                <img src="filepath" class="carousel-slide" alt="A text image">
-                <img src=".png" class="carousel-slide" alt="A text image">
-                <img src=".png" class="carousel-slide" alt="A text image">
-            </div>
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        </div>
-          
-    </div>
+<!-- Lessons -->
+<h2 class="section-title">Lessons</h2>
 
-    <footer>
-        <p>Team name | Contact: iEmail address | Phone: +44 123 456 7890</p>
-        <p>Follow us on <a href="#" style="color: white;">Social Media</a> | Team name</p>
-        <a href=""> Instagram |</a>
-        <a href=""> Facebook |</a>
-        <a href=""> X |</a>
-        <a href=""> Terms and Conditions</a>
-        <br>
-        <img src="CYE Logo.png" alt="">
-    </footer>
+<div class="lesson-card">
+<img src="pexels-pixabay-53621.jpg">
+<div>
+<h3>Lesson 1: Ratios</h3>
+<p>A ratio compares two quantities. Example: 2 apples and 4 oranges is 2:4. Simplify by dividing both numbers.</p>
+<button onclick="startLesson('ratios')">Start Lesson</button>
+</div>
+</div>
 
-    <script>
-        // Initialize slideIndex to track the current slide being displayed
-let slideIndex = 0;
+<div class="lesson-card">
+<img src="pexels-cottonbro-5184955.jpg">
+<div>
+<h3>Lesson 2: Fractions</h3>
+<p>Fractions are parts of a whole. Example: 1/2 + 1/2 = 1. Remember to find a common denominator if needed.</p>
+<button onclick="startLesson('fractions')">Start Lesson</button>
+</div>
+</div>
 
-// Select all elements with the class "carousel-slide" (the individual slides in the carousel)
-const slides = document.querySelectorAll(".carousel-slide");
+<div class="lesson-card">
+<img src="pexels-yankrukov-8617634.jpg">
+<div>
+<h3>Lesson 3: Decimals</h3>
+<p>Decimals are another way to write fractions. Example: 0.5 = 1/2, 0.25 = 1/4.</p>
+<button onclick="startLesson('decimals')">Start Lesson</button>
+</div>
+</div>
 
-// Function to move to the next or previous slide
-function moveSlide(step) {
-    // Hide the current slide
-    slides[slideIndex].style.display = "none";
-    
-    // Update the slideIndex to the next/previous slide, accounting for circular navigation
-    slideIndex = (slideIndex + step + slides.length) % slides.length;
-    
-    // Show the next slide
-    slides[slideIndex].style.display = "block";
+<div class="lesson-card">
+<img src="pexels-vanessa-garcia-6325959.jpg">
+<div>
+<h3>Lesson 4: BIDMAS</h3>
+<p>BIDMAS = Brackets, Indices, Division, Multiplication, Addition, Subtraction. Follow this order in calculations.</p>
+<button onclick="startLesson('bidmas')">Start Lesson</button>
+</div>
+</div>
+
+<!-- Test Yourself Mixed Quiz -->
+<div class="test-yourself">
+<h2>Test Yourself</h2>
+<p>Try a mixed quiz from all lessons.</p>
+<button class="lesson-button" onclick="startQuiz('mixed')">Start Challenge</button>
+</div>
+
+</div>
+
+<!-- Lesson Overlay -->
+<div id="lesson-overlay">
+<div id="lesson-box">
+<button id="quit-btn" onclick="quitLesson()">❌</button>
+<h2 id="lesson-title"></h2>
+<div id="lesson-content"></div>
+<button id="start-quiz-btn" onclick="goToLessonQuiz()">Go to Quiz</button>
+</div>
+</div>
+
+<!-- Quiz Overlay -->
+<div id="quiz-overlay">
+<div id="quiz-box">
+<button id="quit-btn" onclick="quitQuiz()">❌</button>
+<h2 id="quiz-question"></h2>
+<p id="quiz-progress"></p>
+<input id="quiz-answer" type="text">
+<br>
+<button id="submit-btn" onclick="submitAnswer()">Submit</button>
+<p id="quiz-feedback"></p>
+<p id="quiz-score"></p>
+</div>
+</div>
+
+<footer>
+    <p>Contact: Email address | Phone: +44 123 456 7890</p>
+    <p>Follow us on <a href="#" style="color: white;">Social Media</a> | Cambridgeshire Youth Education</p>
+    <a href=""> Instagram |</a>
+    <a href=""> Facebook |</a>
+    <a href=""> X |</a>
+    <a href=""> Terms and Conditions</a>
+    <br>
+        <img src="CYELogo.png" alt="">
+</footer>
+
+<script>
+const lessons = {
+ratios: "A ratio compares two quantities. Example: 2 apples and 4 oranges is 2:4. Simplify by dividing both numbers.",
+fractions: "Fractions represent parts of a whole. Example: 1/2 + 1/2 = 1. Find a common denominator when needed.",
+decimals: "Decimals are another way to write fractions. Example: 0.5 = 1/2, 0.25 = 1/4.",
+bidmas: "BIDMAS = Brackets, Indices, Division, Multiplication, Addition, Subtraction. Follow this order in calculations."
 }
 
-// Function to automatically move the slide every 3 seconds (3000ms)
-function autoSlide() {
-    moveSlide(1);  // Move to the next slide
-    setTimeout(autoSlide, 3000);  // Set the function to call itself after 3 seconds
+const quizzes = {
+ratios:[{q:"Simplify 2:4",a:"1:2"},{q:"Simplify 6:18",a:"1:3"}],
+fractions:[{q:"1/2 + 1/2 = ?",a:"1"},{q:"3/4 + 1/2 = ?",a:"5/4"}],
+decimals:[{q:"1 ÷ 2 = ?",a:"0.5"},{q:"3 ÷ 4 = ?",a:"0.75"}],
+bidmas:[{q:"2 + 3 × 4 = ?",a:"14"},{q:"5 × (2 + 3) = ?",a:"25"}],
+mixed:[{q:"Simplify 10:15",a:"2:3"},{q:"1/3 + 2/3 = ?",a:"1"},{q:"Convert 0.25 to a fraction",a:"1/4"},{q:"5 + 2 × 3 = ?",a:"11"}]
 }
 
-// Event listener to run the code once the DOM content is fully loaded
-document.addEventListener("DOMContentLoaded", function () {
-    // Initially hide all slides, then display only the first slide
-    slides.forEach((slide, index) => slide.style.display = index === 0 ? "block" : "none");
+let currentLesson = ""
+let currentQuiz = []
+let currentIndex = 0
+let score = 0
 
-    // Start the automatic sliding function
-    autoSlide();
-});
+// Start Lesson
+function startLesson(topic){
+currentLesson = topic
+document.getElementById("lesson-title").innerText = "Lesson: "+topic.charAt(0).toUpperCase() + topic.slice(1)
+document.getElementById("lesson-content").innerText = lessons[topic]
+document.getElementById("lesson-overlay").style.display="flex"
+document.getElementById("lesson-overlay").style.visibility="visible"
+document.getElementById("start-quiz-btn").style.display="inline-block"
+}
 
-    </script>
+// Go to Lesson Quiz
+function goToLessonQuiz(){
+document.getElementById("lesson-overlay").style.display="none"
+startQuiz(currentLesson)
+}
+
+// Quit Lesson
+function quitLesson(){
+document.getElementById("lesson-overlay").style.display="none"
+}
+
+// Start Quiz
+function startQuiz(topic){
+currentQuiz = quizzes[topic]
+currentIndex = 0
+score = 0
+document.getElementById("quiz-overlay").style.display="flex"
+document.getElementById("quiz-overlay").style.visibility="visible"
+document.getElementById("quiz-answer").style.display="inline-block"
+document.getElementById("submit-btn").style.display="inline-block"
+showQuestion()
+}
+
+// Show Quiz Question
+function showQuestion(){
+if(currentIndex >= currentQuiz.length){
+document.getElementById("quiz-question").innerText="🎉 Quiz Complete!"
+document.getElementById("quiz-answer").style.display="none"
+document.getElementById("submit-btn").style.display="none"
+document.getElementById("quiz-feedback").innerText=""
+document.getElementById("quiz-score").innerText="Final Score: "+score+" / "+currentQuiz.length
+document.getElementById("quiz-progress").innerText=""
+return
+}
+const q = currentQuiz[currentIndex]
+document.getElementById("quiz-question").innerText = q.q
+document.getElementById("quiz-progress").innerText = "Question "+(currentIndex+1)+" of "+currentQuiz.length
+document.getElementById("quiz-answer").value=""
+document.getElementById("quiz-answer").focus()
+document.getElementById("quiz-feedback").innerText=""
+document.getElementById("quiz-score").innerText="Score: "+score
+}
+
+// Submit Quiz Answer
+function submitAnswer(){
+const input = document.getElementById("quiz-answer")
+const feedback = document.getElementById("quiz-feedback")
+const correct = currentQuiz[currentIndex].a
+if(input.value.trim() === correct){
+feedback.innerText="✅ Correct!"
+feedback.style.color="lightgreen"
+score++
+currentIndex++
+setTimeout(showQuestion,700)
+}else{
+feedback.innerText="❌ Try again!"
+feedback.style.color="red"
+}
+}
+
+// Quit Quiz
+function quitQuiz(){
+const overlay = document.getElementById("quiz-overlay")
+overlay.style.display="none"
+overlay.style.visibility="hidden"
+document.getElementById("quiz-answer").style.display="none"
+document.getElementById("submit-btn").style.display="none"
+}
+</script>
+
 </body>
 </html>
