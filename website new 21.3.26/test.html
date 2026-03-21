@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maths 17–18 | Learning Platform</title>
+
+<style>
+
+/* ===== GENERAL ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    background: #23689c;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+nav a, .dropbtn {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+nav a:hover, .dropbtn:hover {
+    background: #23689c;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #47bed5;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: white;
+}
+
+.dropdown-content a:hover {
+    background: #23689c;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #8fb0f9, #1e3a8a);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    padding: 12px 25px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background: #fbbf24;
+    color: black;
+}
+
+.primary-btn:hover {
+    background: #f59e0b;
+}
+
+.secondary-btn {
+    background: white;
+    color: #1e3a8a;
+}
+
+.secondary-btn:hover {
+    background: #e5e7eb;
+}
+
+/* ===== CONTENT SECTION ===== */
+.section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    width: 250px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #23689c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">Subjects ▼</button>
+        <div class="dropdown-content">
+            <a href="algebra.html">Algebra</a>
+            <a href="arithmetic.html">Arithmatic</a>
+            <a href="geometry.html">Geometry</a>
+            <a href="trigonometry.html">Trigonometry</a>
+        </div>
+    </div>
+
+    <a href="leaderboard.html">Leaderboard</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <h1>17–18 Maths Education Platform</h1>
+    <p>Learn • Practice • Test Your Knowledge</p>
+</section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section class="section" id="learn">
+    <h2>What this lesson Offers</h2>
+    <p>Designed for students aged 17–18 preparing for advanced mathematics exams.</p>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>📘 Structured Lessons</h3>
+            <p>Clear explanations for key A-Level topics.</p>
+        </div>
+
+        <div class="card">
+            <h3>🧠 Interactive Quizzes</h3>
+            <p>Test your knowledge instantly with auto-marked quizzes.</p>
+        </div>
+
+        <div class="card">
+            <h3>🏆 Leaderboard</h3>
+            <p>Track your progress and compete with others.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+  <footer>
+    <p>Team name | Contact: iEmail address | Phone: +44 123 456 7890</p>
+    <p>Follow us on <a href="#" style="color: white;">Social Media</a> | Team name</p>
+    <a href=""> Instagram |</a>
+    <a href=""> Facebook |</a>
+    <a href=""> X |</a>
+    <a href=""> Terms and Conditions</a>
+    <br>
+
+  </footer>
+<script>
+
+/* Smooth scroll */
+function scrollToSection() {
+    document.getElementById("learn").scrollIntoView({ behavior: "smooth" });
+}
+
+/* Dynamic Footer */
+document.getElementById("footer-text").innerHTML =
+    "© " + new Date().getFullYear() +
+    " Maths 17–18 Education Platform | Learn • Practice • Succeed";
+
+</script>
+
+</body>
+</html>
