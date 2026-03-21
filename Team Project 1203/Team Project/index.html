@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cambridge Youth Education</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body { font-family: Arial, sans-serif; margin:0; background:#f4f4f4; }
+header { background:#003366; color:white; padding:10px; display:flex; align-items:center; justify-content:space-between; }
+header img { height:50px; }
+nav ul { list-style:none; display:flex; gap:15px; margin:0; padding:0; }
+nav a { color:white; text-decoration:none; }
+.content { max-width:1100px; margin:auto; padding:20px; }
+
+/* HERO */
+.hero { text-align:center; padding:60px 20px; background:#003366; color:white; border-radius:10px; margin-bottom:40px; }
+.hero h1{ font-size:2.5rem; margin-bottom:10px; }
+.cta-button{ display:inline-block; margin-top:20px; padding:12px 25px; background:#00aaff; color:white; text-decoration:none; border-radius:6px; font-weight:bold; }
+
+/* LEARNING GRID */
+.learning-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:25px; margin-top:30px; }
+.learning-card{ background:white; padding:25px; border-radius:10px; border:1px solid #ddd; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; transition:transform 0.2s; }
+.learning-card:hover{ transform:translateY(-5px); }
+.learning-card h3{ color:#003366; margin-bottom:10px; }
+
+/* CAROUSEL */
+.carousel{ position:relative; max-width:800px; margin:40px auto; }
+.carousel-slide{ width:100%; display:none; border-radius:10px; }
+.prev, .next{ position:absolute; top:50%; transform:translateY(-50%); background:#003366; color:white; border:none; padding:10px; cursor:pointer; font-size:20px; }
+.prev{ left:10px; } .next{ right:10px; }
+
+/* CONTACT CTA */
+.contactusnow{ background:#003366; color:white; padding:40px; border-radius:10px; margin-top:40px; text-align:center; }
+
+/* FOOTER */
+footer{ background:#003366; color:white; text-align:center; padding:20px; margin-top:40px; }
+footer img{ height:40px; margin-top:10px; }
+</style>
+</head>
+<body>
+
+<header>
+<a href="index.html"><img src="CYELogo.png" alt="Logo"></a>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="page1.html">Developers</a></li>
+<li><a href="page2.html">Year 7–8</a></li>
+<li><a href="page3.html">Year 8–9</a></li>
+<li><a href="page6.html">Year 10–11</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="content">
+
+<!-- HERO -->
+<div class="hero">
+<h1>Welcome to Cambridge Youth Education</h1>
+<p>Free interactive Maths lessons and quizzes for secondary school students aged 12–18. Build skills, confidence, and knowledge today.</p>
+<a href="page2.html" class="cta-button">Start Year 7–8 Maths</a>
+</div>
+
+<!-- START LEARNING DASHBOARD -->
+<h2 style="text-align:center; margin-top:40px;">Start Learning</h2>
+<div class="learning-grid">
+  <div class="learning-card">
+    <h3>Maths Hub (Year 7–8)</h3>
+    <p>Practice ratios, fractions, decimals, BIDMAS and problem-solving for Year 7–8 students.</p>
+    <a href="page2.html" class="cta-button">Start Year 7–8</a>
+  </div>
+
+  <div class="learning-card">
+    <h3>Maths Hub (Year 8–9)</h3>
+    <p>Interactive lessons and quizzes designed for Year 8–9 students to build stronger Maths skills.</p>
+    <a href="page3.html" class="cta-button">Start Year 8–9</a>
+  </div>
+
+  <div class="learning-card">
+    <h3>Maths Hub (Year 10–11)</h3>
+    <p>Advanced exercises and interactive lessons suitable for Year 10–11 students preparing for exams.</p>
+    <a href="page6.html" class="cta-button">Start Year 10–11</a>
+  </div>
+</div>
+
+<!-- IMAGE CAROUSEL -->
+<div class="carousel">
+<img src="Classroom.jpg" class="carousel-slide" alt="Classroom">
+<img src="Graduation.jpg" class="carousel-slide" alt="Graduation">
+<img src="Teaching.jpg" class="carousel-slide" alt="Teaching">
+<button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+<button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<!-- WHO WE ARE -->
+<h1>Who We Are</h1>
+<p>Cambridge Youth Education (CYE) helps students build the skills, confidence, and knowledge they need to succeed in today’s fast-changing world.</p>
+<p>We provide free Maths lessons, modern teaching approaches, and interactive activities to help students learn effectively and independently.</p>
+
+<!-- WHAT WE OFFER -->
+<h2>What We Offer</h2>
+<ul>
+<li>✔ Free interactive Maths lessons for all year groups</li>
+<li>✔ Academic support and skill development</li>
+<li>✔ Engaging exercises and quizzes</li>
+<li>✔ Experienced and supportive educators</li>
+<li>✔ Preparation for exams and real-life skills</li>
+</ul>
+
+<!-- CALL TO ACTION -->
+<div class="contactusnow">
+<h2>Ready to Start Learning?</h2>
+<p>Click on any of the cards above to begin your Maths lessons immediately. All content is free to use!</p>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+<p>Team name | Contact: iEmail address | Phone: +44 123 456 7890</p>
+<p>Follow us on <a href="#" style="color:white;">Social Media</a> | Team name</p>
+<a href="">Instagram |</a>
+<a href="">Facebook |</a>
+<a href="">X |</a>
+<a href="">Terms and Conditions</a>
+<br>
+<img src="CYELogo.png" alt="Logo">
+</footer>
+
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll(".carousel-slide");
+function moveSlide(step){
+slides[slideIndex].style.display="none";
+slideIndex = (slideIndex + step + slides.length) % slides.length;
+slides[slideIndex].style.display="block";
+}
+function autoSlide(){ moveSlide(1); setTimeout(autoSlide,3000); }
+document.addEventListener("DOMContentLoaded",function(){
+slides.forEach((slide,index)=>slide.style.display=index===0?"block":"none");
+autoSlide();
+});
+</script>
+
+</body>
+</html>
