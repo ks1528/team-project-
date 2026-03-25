@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arithmetic</title>
+<link rel="stylesheet" href="stylesOL.css">
+</head>
+<body>
+<!-- ===== NAVIGATION ===== -->
+<nav>
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">Subjects ▼</button>
+        <div class="dropdown-content">
+            <a href="algebra.html">Algebra</a>
+            <a href="arithmetic.html">Arithmatic</a>
+            <a href="geometry.html">Geometry</a>
+            <a href="trigonometry.html">Trigonometry</a>
+        </div>
+    </div>
+
+    <a href="leaderboard.html">Leaderboard</a>
+</nav>
+
+
+
+
+<div class="container"><div class="card">
+<h2>Arithmetic Lesson</h2>
+<div class="lesson-box"><p>📘 Arithmetic – Revision Bullet Points<br></p></div>
+
+<div class="lesson-box"><p>📘What Is Arithmetic?<br>
+<br>
+- Arithmetic is the branch of maths that deals with basic number operations.<br>
+
+- It involves working with numbers to calculate answers.<br>
+
+- It is the foundation for algebra and higher maths.<br>
+<br>
+</p></div>
+
+<div class="lesson-box"><p>📘The Four Main Operations<br>
+<br>
+- Addition – combining numbers to find a total.<br>
+
+- Subtraction – finding the difference between numbers.<br>
+
+- Multiplication – repeated addition.<br>
+
+- Division – splitting into equal parts or groups<br>
+<br>
+</p></div>
+
+<div class="lesson-box"><p>📘Order of Operation<br>
+<br>
+- There is a correct order to solve calculations.<br>
+
+- Brackets are done first.<br>
+
+- Powers (indices) come next.<br>
+
+- Then multiplication and division.<br>
+
+- Finally addition and subtraction.<br>
+
+- Work from left to right within each step.<br>
+<br>
+</p></div>
+
+<div class="lesson-box"><p>📘Working with Decimals<br>
+<br>
+- Line up decimal points when adding or subtracting.<br>
+
+- Multiply as normal, then place the decimal correctly.<br>
+
+- When dividing, you can move the decimal to make numbers easier to work with.<br>
+<br>
+</p></div>
+
+<div class="lesson-box"><p>📘Fractions<br>
+<br>
+- A fraction represents part of a whole.<br>
+
+- To add or subtract fractions, the denominators must be the same.<br>
+
+- Multiply fractions across the top and bottom.<br>
+
+- To divide fractions, multiply by the reciprocal.<br>
+
+- Always simplify your final answer if possible.<br>
+<br>
+</p></div>
+
+<div class="lesson-box"><p>📘Percetnages<br>
+<br>
+- A percentage means “out of 100.”<br>
+
+- To find a percentage of a number, multiply by the percentage as a decimal.<br>
+
+- To increase or decrease by a percentage, use a multiplier method.<br>
+<br>
+</p></div>
+
+<div class="lesson-box">
+    <iframe 
+        src="https://www.youtube.com/embed/IwW0GJWKH98" 
+        title="Arithmetic Lesson Video"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+<h3>Quiz</h3>
+<p id="question"></p>
+<input id="answer"><button onclick="submitAnswer()">Submit</button>
+</div></div>
+
+
+<script>
+function runQuiz(questions){
+let q=0; let score=0;
+const qEl=document.getElementById("question");
+const aEl=document.getElementById("answer");
+function show(){ qEl.innerText=questions[q].question; }
+window.submitAnswer=function(){
+if(aEl.value.trim()==questions[q].answer) score++;
+aEl.value="";
+q++;
+if(q<questions.length) show(); else finish();
+}
+function finish(){
+let board=JSON.parse(localStorage.getItem("leaderboard"))||[];
+board.push({name:localStorage.getItem("currentUser"),score:score});
+board.sort((a,b)=>b.score-a.score);
+localStorage.setItem("leaderboard",JSON.stringify(board));
+window.location.href="leaderboard.html";
+}
+show();
+}
+runQuiz([
+{question:"A number is increased by 20% and becomes 360.What was the original number?",answer:"300"},
+{question:"A phone is bought for £750 and sold for £900. Find the percentage profit.?",answer:"20%"},
+{question:"Simplify:5/8 + 3/4 - 1/2",answer:"7/8"},
+{question:"Divide £4,200 between A and B in the ratio 3:4.",answer:"1800:2400"},
+{question:"A sum of money doubles in 8 years at simple interest. What is the annual rate of interest?",answer:"12.5"}
+]);
+</script>
+
+
+<footer><p>Math Learning Platform © 2026</p><p>Learn • Practice • Improve</p></footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head><title>Geometry</title><link rel="stylesheet" href="stylesOL.css"></head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">Subjects ▼</button>
+        <div class="dropdown-content">
+            <a href="algebra.html">Algebra</a>
+            <a href="arithmetic.html">Arithmatic</a>
+            <a href="geometry.html">Geometry</a>
+            <a href="trigonometry.html">Trigonometry</a>
+        </div>
+    </div>
+
+    <a href="leaderboard.html">Leaderboard</a>
+</nav>
+
+
+
+
+<div class="container"><div class="card">
+<h2>Geometry Lesson</h2>
+<div class="lesson-box"><p>
+    <img src="geo.png" alt="Geometry location" width="450">
+</p>
+</div>
+
+<div class="lesson-box">
+    <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        title="Arithmetic Lesson Video"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
+
+<p id="question"></p>
+<input id="answer"><button onclick="submitAnswer()">Submit</button>
+</div></div>
+<script>
+function runQuiz(questions){
+let q=0; let score=0;
+const qEl=document.getElementById("question");
+const aEl=document.getElementById("answer");
+function show(){ qEl.innerText=questions[q].question; }
+window.submitAnswer=function(){
+if(aEl.value.trim()==questions[q].answer) score++;
+aEl.value="";
+q++;
+if(q<questions.length) show(); else finish();
+}
+function finish(){
+let board=JSON.parse(localStorage.getItem("leaderboard"))||[];
+board.push({name:localStorage.getItem("currentUser"),score:score});
+board.sort((a,b)=>b.score-a.score);
+localStorage.setItem("leaderboard",JSON.stringify(board));
+window.location.href="leaderboard.html";
+}
+show();
+}
+runQuiz([
+{question:"A Cicrle has a radius of 10cm, Find the length of the Arc subtended by a cental angle of 60 degrees.",answer:"10.47"},
+{question:"In triangle ABC, AB=7, AC=9 <A=60 Degrees, Find the Length of BC.",answer:"8.19"},
+{question:"Two sides of a triangle are 8cm and 11cm and the inlcuded angle is 40 degress, Find the area of the triangle.",answer:"28.3"},
+{question:"A cone has a radius of 3cm and a height of 12cm, Find the volume.",answer:"113.1"},
+{question:"Point A(2,5) and B(8.13) are given. Find the midpoint of AB.",answer:"(5,9)"},
+]);
+</script>
+<footer><p>Math Learning Platform © 2026</p><p>Learn • Practice • Improve</p></footer>
+</body>
+</html>
