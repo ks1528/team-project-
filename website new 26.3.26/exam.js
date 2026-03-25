@@ -1,0 +1,218 @@
+// Quiz data
+const quizData = [
+    {
+        question: "What is 470 + 749?",
+        options: ["1230", "1124", "1219", "950"],
+        answer: "1219",
+    },
+    {
+        question: "what is 1143 + 790?",
+        options: ["2310", "1320", "908", "1933"],
+        answer: "1933",
+    },
+    {
+        question: "what is 10,098 + 1450?",
+        options: [
+            "11,548",
+            "11,654",
+            "12,345",
+            "10,980",
+        ],
+        answer: "11,548",
+    },
+       {
+        question: "What is 470 + 749?",
+        options: ["1230", "1124", "1219", "950"],
+        answer: "1219",
+    },
+    {
+        question: "what is 1143 + 790?",
+        options: ["2310", "1320", "908", "1933"],
+        answer: "1933",
+    },
+    {
+        question: "what is 10,098 + 1450?",
+        options: [
+            "11,548",
+            "11,654",
+            "12,345",
+            "10,980",
+        ],
+        answer: "11,548",
+    },
+       {
+        question: "What is 470 + 749?",
+        options: ["1230", "1124", "1219", "950"],
+        answer: "1219",
+    },
+    {
+        question: "what is 1143 + 790?",
+        options: ["2310", "1320", "908", "1933"],
+        answer: "1933",
+    },
+    {
+        question: "what is 10,098 + 1450?",
+        options: [
+            "11,548",
+            "11,654",
+            "12,345",
+            "10,980",
+        ],
+        answer: "11,548",
+    },
+       {
+        question: "What is 470 + 749?",
+        options: ["1230", "1124", "1219", "950"],
+        answer: "1219",
+    },
+    {
+        question: "what is 1143 + 790?",
+        options: ["2310", "1320", "908", "1933"],
+        answer: "1933",
+    },
+    {
+        question: "what is 10,098 + 1450?",
+        options: [
+            "11,548",
+            "11,654",
+            "12,345",
+            "10,980",
+        ],
+        answer: "11,548",
+    },
+       {
+        question: "What is 470 + 749?",
+        options: ["1230", "1124", "1219", "950"],
+        answer: "1219",
+    },
+    {
+        question: "what is 1143 + 790?",
+        options: ["2310", "1320", "908", "1933"],
+        answer: "1933",
+    },
+    {
+        question: "what is 10,098 + 1450?",
+        options: [
+            "11,548",
+            "11,654",
+            "12,345",
+            "10,980",
+        ],
+        answer: "11,548",
+    },
+ 
+];
+
+const quizForm = document.getElementById("quizForm");
+const quizQuestions = document.getElementById("quizQuestions");
+const quizResult = document.getElementById("quizResult");
+const resetButton = document.getElementById("resetButton");
+
+// Render questions dynamically
+function renderQuestions() {
+    quizData.forEach((item, index) => {
+        const questionBlock = document.createElement("div");
+        questionBlock.classList.add("mb-4");
+
+        // Question title
+        const questionTitle = document.createElement("h3");
+        questionTitle.textContent = `${index + 1}. ${item.question}`;
+        questionBlock.appendChild(questionTitle);
+
+        // Options
+        item.options.forEach((option) => {
+            const optionWrapper = document.createElement("div");
+            optionWrapper.classList.add("form-check");
+
+            const optionInput = document.createElement("input");
+            optionInput.classList.add("form-check-input");
+            optionInput.type = "radio";
+            optionInput.name = `question${index}`;
+            optionInput.value = option;
+
+            const optionLabel = document.createElement("label");
+            optionLabel.classList.add("form-check-label");
+            optionLabel.textContent = option;
+
+            optionWrapper.appendChild(optionInput);
+            optionWrapper.appendChild(optionLabel);
+
+            questionBlock.appendChild(optionWrapper);
+        });
+
+        quizQuestions.appendChild(questionBlock);
+    });
+}
+
+// Calculate score and display results
+function calculateScore() {
+    let score = 0;
+    let unansweredQuestions = false;
+ 
+    quizData.forEach((item, index) => {
+        const selectedOption = quizForm[`question${index}`].value;
+        const result = document.getElementById("result").textContent = ` ${score < 10 ? "Fail" : "Pass"}`;
+        if (!selectedOption) {
+            unansweredQuestions = true;
+        } else if (selectedOption === item.answer) {
+            score++;
+
+
+        }
+       
+    });
+
+    if (unansweredQuestions) {
+        alert("Please answer all questions before submitting.");
+        return;
+    }
+
+
+    quizResult.textContent = `You scored ${score} out of ${quizData.length}!`;
+
+    // Show correct/incorrect feedback
+    quizData.forEach((item, index) => {
+        const selectedOption = quizForm[`question${index}`].value;
+        const feedback = selectedOption === item.answer ? "correct" : "incorrect";
+
+        const questionTitle = quizQuestions.children[index].querySelector("h5");
+        questionTitle.classList.add(feedback);
+    });
+
+    // Disable form and show reset button
+    quizForm.querySelectorAll("input").forEach((input) => (input.disabled = true));
+    resetButton.classList.remove("d-none");
+}
+
+// Reset the quiz
+function resetQuiz() {
+    quizForm.reset();
+    quizQuestions.innerHTML = "";
+    quizResult.textContent = "";
+    resetButton.classList.add("d-none");
+    renderQuestions();
+}
+
+// Event listeners
+quizForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    calculateScore();
+});
+
+resetButton.addEventListener("click", resetQuiz);
+
+// Initialize quiz
+renderQuestions();
+
+
+  let score = 0;
+  const totalQuestions = Object.keys(correctAnswers).length;
+
+  // Loop through each question and check
+  for (let question in correctAnswers) {
+    const selected = document.querySelector(`input[name="${question}"]:checked`);
+    if (selected && selected.value === correctAnswers[question]) {
+      score++;
+    }
+  }
+
